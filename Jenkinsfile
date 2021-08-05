@@ -17,8 +17,8 @@ node{
     }
     
     stage('Push Docker Image'){
-        withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u iambabu -p ${Docker_Hub_Pwd}"
+        withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd1')]) {
+          sh "docker login -u iambabu -p ${Docker_Hub_Pwd1}"
         }
         sh 'docker push iambabu/java-web-app'
      }
